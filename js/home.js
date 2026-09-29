@@ -1,5 +1,5 @@
 (() => {
-  const { $, $$, D, icon, listingURL, productURL, formatINR, cardHTML, escapeHTML, imageFor, mediaClass } = Site;
+  const { $, $$, D, icon, listingURL, cardHTML, escapeHTML, imageFor, mediaClass } = Site;
   Site.init();
 
   $$(".round-nav").forEach((btn) => {
@@ -164,18 +164,6 @@
   bestRail.innerHTML = diverse(tagged("best"), 10).map(cardHTML).join("");
   $(".best-prev").addEventListener("click", () => scrollRail(bestRail, -1));
   $(".best-next").addEventListener("click", () => scrollRail(bestRail, 1));
-
-  const bridalPicks = [
-    D.products.find((p) => p.cat === "necklaces-pendants" && p.type === "Necklace"),
-    D.products.find((p) => p.cat === "mangalsutra"),
-    D.products.find((p) => p.type === "Bangle"),
-  ].filter(Boolean);
-  $(".bridal-products").innerHTML = bridalPicks.map((p) => `
-    <a class="mini-product" href="${productURL(p.id)}">
-      <span class="plp-media ${mediaClass(p)}"><span class="plp-img ${p.bg}"><img src="${imageFor(p)}" alt="" loading="lazy"></span></span>
-      <span class="mini-name">${escapeHTML(p.name)}</span>
-      <b>${formatINR(p.price)}</b>
-    </a>`).join("");
 
   $(".diamond-grid").innerHTML = diverse(D.products.filter((p) => p.metal === "Diamond"), 3).map(cardHTML).join("");
   $(".gold-grid").innerHTML = diverse(D.products.filter((p) => p.metal === "Plain Gold"), 3).map(cardHTML).join("");

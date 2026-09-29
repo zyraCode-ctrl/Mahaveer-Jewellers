@@ -13,8 +13,8 @@ window.Site = (() => {
   const findProduct = (id) => D.products.find((p) => p.id === id);
   const findCategory = (slug) => D.CATEGORIES.find((c) => c.slug === slug);
   const imageFor = (p, index = 0) => (p.images && p.images.length ? p.images[index % p.images.length] : `assets/${p.icon}.svg`);
-  const whatsappURL = (message) => `https://wa.me/${B.whatsapp}?text=${encodeURIComponent(message)}`;
-  const mapURL = () => `https://www.google.com/maps/search/${encodeURIComponent(`${B.mapQuery} ${B.address}`)}`;
+  const whatsappURL = () => `https://wa.me/${B.whatsapp}?text=${encodeURIComponent(`Hello ${B.name}`)}`;
+  const mapURL = () => B.mapURL;
   const productEnquiry = (p) => whatsappURL(`Hello ${B.name}, I would like to know more about ${p.name} (${p.id}), listed at ${formatINR(p.price)}.`);
 
   // Placeholder artwork is tinted to hint at the metal until real photos are added.

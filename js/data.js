@@ -3,13 +3,13 @@ window.SiteData = (() => {
   const BRAND = {
     name: "Mahaveer Jewellers",
     tagline: "Fine Gold, Diamond & Bridal Jewellery",
-    phone: "+91 00000 00000",
-    phoneHref: "tel:+910000000000",
-    whatsapp: "910000000000",
-    email: "care@example.com",
-    address: "Mahaveer Jewellers, Main Road, City Centre, Gujarat 000000",
+    phone: "+91 98255 46207",
+    phoneHref: "tel:+919825546207",
+    whatsapp: "919825546207",
+    email: "mahaveerjewellers508@gmail.com",
+    address: "177 - 178 Maruti Dham Row-House, Near Community Hall, Sarthana Jakat Naka, Surat, Gujarat 395006",
     hours: "10:30 AM – 8:30 PM, Monday to Sunday",
-    mapQuery: "Mahaveer Jewellers",
+    mapURL: "https://maps.app.goo.gl/bT5ye1QQzLwgqFcm7",
     instagram: "https://www.instagram.com/mahaveer__jewellers/",
     // Reel links (e.g. "https://www.instagram.com/reel/XXXXXXXXX/") shown with Instagram's official
     // embed when the server feed (INSTAGRAM_ACCESS_TOKEN in .env) is not connected.

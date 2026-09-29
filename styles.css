@@ -262,7 +262,7 @@ em { font-style: italic; }
 .home-section { margin-top: 104px; }
 .section-head { text-align: center; margin-bottom: 44px; }
 .section-head h2 { font-family: var(--serif); font-size: clamp(34px, 4vw, 54px); font-weight: 500; line-height: 1.08; margin-top: 10px; }
-.section-head h2 em, .bridal-copy h2 em, .story-copy h2 em, .showroom-intro h2 em, .heritage-copy h2 em { color: var(--maroon); }
+.section-head h2 em, .story-copy h2 em, .showroom-intro h2 em, .heritage-copy h2 em { color: var(--maroon); }
 .section-head h3 { font-family: var(--serif); font-size: clamp(28px, 3vw, 38px); font-weight: 500; line-height: 1.1; margin-top: 8px; }
 .section-sub { color: var(--muted); font-size: 15.5px; margin-top: 12px; }
 .section-head.split { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; text-align: left; }
@@ -365,29 +365,8 @@ em { font-style: italic; }
 .story-inset-label { display: block; padding-top: 10px; text-align: center; font-size: 10.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); }
 .story-inset:hover .story-inset-label { color: var(--maroon); }
 
-/* ---------- Bridal ---------- */
-.bridal-band { margin-top: 112px; padding: 104px 0; background: linear-gradient(180deg, #f7efe6 0%, var(--ivory) 100%); }
-.bridal { display: grid; grid-template-columns: 5fr 6fr; gap: 80px; align-items: center; }
-.bridal-photo { position: relative; }
-.bridal-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; border-radius: 300px 300px var(--radius-lg) var(--radius-lg); }
-.bridal-photo figcaption { position: absolute; left: -28px; bottom: 40px; background: var(--white); border-radius: var(--radius); padding: 18px 26px; box-shadow: var(--shadow); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
-.bridal-photo figcaption span { display: block; font-family: var(--serif); font-size: 24px; letter-spacing: 0; text-transform: none; color: var(--ink); }
-.bridal-copy h2 { font-family: var(--serif); font-size: clamp(36px, 4vw, 56px); font-weight: 500; line-height: 1.06; margin: 14px 0 18px; }
-.bridal-copy > p { color: var(--muted); font-size: 16px; max-width: 560px; }
-.bridal-points { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 32px; margin: 30px 0; padding-top: 28px; border-top: 1px solid var(--line); }
-.bridal-points b { display: block; font-family: var(--serif); font-size: 21px; font-weight: 500; }
-.bridal-points span { color: var(--muted); font-size: 14px; }
-.bridal-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-.mini-products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
-.mini-product { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-.mini-product .plp-media { border: 1px solid #efe7da; border-radius: var(--radius); background: var(--white); }
-.mini-product:hover img { transform: scale(1.05); }
-.mini-name { font-size: 13px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 6px; }
-.mini-product b { font-weight: 500; font-size: 14px; }
-
 /* ---------- Diamond & gold bands ---------- */
 .metal-band { margin-top: 104px; padding: 100px 0; }
-.bridal-band + .metal-band { margin-top: 0; }
 .diamond-band { background: var(--black); color: var(--ivory); }
 .gold-band { background: var(--white); border-top: 1px solid var(--line); }
 .metal-layout { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 64px; align-items: center; }
@@ -1122,7 +1101,6 @@ input:not([type=checkbox]):not([type=radio]), select, textarea, .qv-media .plp-i
   .best-intro { padding: 40px 32px; }
   .best-nav { margin: 8px 0 12px; padding-top: 0; }
   .best-rail { grid-auto-columns: calc(33.333% - 16px); }
-  .bridal { grid-template-columns: 1fr 1fr; gap: 48px; }
   .story { gap: 48px; }
   .showroom-intro { grid-template-columns: 1fr; gap: 20px; }
   .heritage-grid { gap: 48px; }
@@ -1169,9 +1147,6 @@ input:not([type=checkbox]):not([type=radio]), select, textarea, .qv-media .plp-i
   .metal-grid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 62%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 6px; }
   .metal-grid::-webkit-scrollbar { display: none; }
   .metal-grid > * { scroll-snap-align: start; }
-  .bridal { grid-template-columns: 1fr; gap: 56px; }
-  .bridal-photo { max-width: 520px; margin: 0 auto; width: 100%; }
-  .bridal-photo figcaption { left: 16px; }
   .showroom-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 280px 200px 200px; }
   .sm-a { grid-row: auto; grid-column: 1 / -1; }
   .sm-d { grid-column: 1 / -1; }
@@ -1249,8 +1224,8 @@ input:not([type=checkbox]):not([type=radio]), select, textarea, .qv-media .plp-i
   .best-intro h2 { font-size: 40px; }
   .best-intro { padding: 32px 24px; }
   .best-nav { display: none; }
-  .home .collections-band, .bridal-band, .heritage, .newsletter { margin-top: 72px; }
-  .bridal-band, .heritage { padding: 68px 0; }
+  .home .collections-band, .heritage, .newsletter { margin-top: 72px; }
+  .heritage { padding: 68px 0; }
   .story-copy h2 { font-size: 38px; }
   .story-quote { font-size: 19px; margin: 22px 0 26px; }
   .heritage-word { font-size: 120px; top: 18px; }
@@ -1277,10 +1252,6 @@ input:not([type=checkbox]):not([type=radio]), select, textarea, .qv-media .plp-i
   .insta-reel { scroll-snap-align: center; }
   .insta-caption { font-size: 16px; }
   .footer-popular p { font-size: 12.5px; }
-  .bridal-points { grid-template-columns: 1fr; gap: 16px; }
-  .bridal-photo figcaption { bottom: 20px; padding: 14px 18px; }
-  .mini-products { gap: 10px; }
-  .mini-name { font-size: 12px; }
   .metal-band { margin-top: 72px; padding: 68px 0; }
   .metal-grid { grid-auto-columns: 72%; }
   .showroom-mosaic { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: 220px; }
