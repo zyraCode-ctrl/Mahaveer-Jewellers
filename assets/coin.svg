@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe7b5"/><stop offset=".45" stop-color="#e2b866"/><stop offset=".8" stop-color="#b98535"/><stop offset="1" stop-color="#f0cf85"/></linearGradient>
+    <radialGradient id="s" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#3a2410" stop-opacity=".18"/><stop offset="1" stop-color="#3a2410" stop-opacity="0"/></radialGradient>
+  </defs>
+  <ellipse cx="200" cy="334" rx="110" ry="12" fill="url(#s)"/>
+  <circle cx="200" cy="196" r="112" fill="url(#g)" stroke="#9c6d27" stroke-width="1.5"/>
+  <circle cx="200" cy="196" r="98" fill="none" stroke="#9c6d27" stroke-width="1.5"/>
+  <circle cx="200" cy="196" r="90" fill="none" stroke="#9c6d27" stroke-width="2" stroke-dasharray="1 6" stroke-linecap="round"/>
+  <g fill="none" stroke="#9c6d27" stroke-width="2.2" stroke-linejoin="round">
+    <path d="M200 140 C 184 164 184 192 200 214 C 216 192 216 164 200 140 Z"/>
+    <path d="M200 214 C 176 206 158 186 154 162 C 178 166 194 186 200 214 Z"/>
+    <path d="M200 214 C 224 206 242 186 246 162 C 222 166 206 186 200 214 Z"/>
+    <path d="M200 214 C 180 216 160 208 146 194 M200 214 C 220 216 240 208 254 194"/>
+    <path d="M156 236 H244 M170 248 H230"/>
+  </g>
+</svg>

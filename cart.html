@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bag | Mahaveer Jewellers</title>
+  <link rel="icon" href="images/brand/mark-gold.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="cart">
+  <div id="site-header"></div>
+  <main class="container page">
+    <div class="plp-head">
+      <h1>My Bag <span class="count"></span></h1>
+      <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li aria-current="page">Bag</li></ol>
+    </div>
+    <div class="cart-layout">
+      <div class="cart-items"></div>
+      <aside class="cart-side">
+        <div class="card">
+          <p class="coupons-title">&#10070; Apply Coupon</p>
+          <form class="coupon-form"><input placeholder="Enter coupon code" aria-label="Coupon code"><button class="btn-primary">Apply</button></form>
+          <div class="chips coupon-list"></div>
+          <p class="applied-coupon"></p>
+        </div>
+        <div class="card">
+          <p class="coupons-title">Order Summary</p>
+          <div class="summary"></div>
+          <button class="btn-primary block checkout">Proceed to Checkout</button>
+        </div>
+      </aside>
+    </div>
+    <div class="empty-state" hidden>
+      <p>&#128722;</p>
+      <h2>Your bag is empty</h2>
+      <p class="muted">Looks like you haven't added anything yet.</p>
+      <a class="btn-primary inline" href="listing.html">Continue Shopping</a>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/icons.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>

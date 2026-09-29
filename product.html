@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | Mahaveer Jewellers</title>
+  <link rel="icon" href="images/brand/mark-gold.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pdp-page">
+  <div id="site-header"></div>
+
+  <main class="container-wide">
+    <ol class="breadcrumb"></ol>
+
+    <section class="pdp" hidden>
+      <div class="gallery">
+        <div class="thumbs" role="tablist"></div>
+        <div class="main-image plp-media">
+          <span class="offer-tag badge badge-offer" hidden>ON OFFER</span>
+          <a class="pill show-similar" href="#">Show Similar</a>
+          <img alt="">
+          <div class="video-placeholder" hidden><span class="vp-icon"></span><p>Product video</p><small>Request a live video walkthrough from our showroom</small></div>
+          <button class="nav gallery-prev round-nav" aria-label="Previous image"></button>
+          <button class="nav gallery-next round-nav" aria-label="Next image"></button>
+        </div>
+        <div class="trust">
+          <div class="trust-card"><span data-icon="shield" data-size="22"></span><strong>BIS Hallmarked</strong><small>HUID certified gold</small></div>
+          <div class="trust-card"><span data-icon="diamond" data-size="22"></span><strong>Certified</strong><small>Graded stones</small></div>
+          <div class="trust-card"><span data-icon="exchange" data-size="22"></span><strong>Lifetime</strong><small>Exchange &amp; upgrade</small></div>
+        </div>
+      </div>
+
+      <div class="info">
+        <p class="eyebrow"></p>
+        <div class="title-row">
+          <h1 class="product-name"></h1>
+          <div class="title-actions">
+            <button class="round-btn wish" aria-label="Add to wishlist" aria-pressed="false"></button>
+            <button class="round-btn share" aria-label="Share"></button>
+          </div>
+        </div>
+        <p class="sku muted"></p>
+
+        <div class="price-block">
+          <p class="price"></p>
+          <p class="muted tax-note">Inclusive of all taxes · Based on today's gold rate</p>
+          <button class="outline-btn breakup-toggle" aria-expanded="false"><span>View Price Breakup</span> <span class="chev" data-icon="chevronDown" data-size="16"></span></button>
+          <table class="breakup" hidden></table>
+        </div>
+
+        <div class="card spec-card">
+          <p class="label">Metal &amp; Stones</p>
+          <p class="metal"></p>
+          <div class="spec-grid"></div>
+          <button class="outline-btn open-details"><span>View Full Product Details</span> <span>+</span></button>
+        </div>
+
+        <div class="card desc-card">
+          <p class="label">Product Description</p>
+          <p class="pdp-desc"></p>
+          <ul class="pdp-highlights"></ul>
+        </div>
+
+        <div class="options">
+          <div class="option size-option">
+            <div class="option-head"><p class="label">Choose Size</p><a href="info.html?page=size-guide" class="link">Size Guide</a></div>
+            <div class="chips" data-group="size"></div>
+          </div>
+          <div class="option">
+            <div class="option-head"><p class="label">Gross Weight</p><span class="muted small-note">Other weights available on request</span></div>
+            <div class="chips" data-group="weight"></div>
+          </div>
+        </div>
+
+        <div class="buy-actions">
+          <button class="btn-primary add-bag"><span data-icon="bag" data-size="18"></span> Add to Bag</button>
+          <button class="btn-gold buy-now">Buy Now</button>
+        </div>
+        <div class="assist-actions">
+          <a class="assist wa-enquiry" href="#" target="_blank" rel="noopener"><span data-icon="whatsapp" data-size="20"></span><span><b>WhatsApp Enquiry</b><small>Photos, video or price on request</small></span></a>
+          <a class="assist" href="stores.html"><span data-icon="store" data-size="20"></span><span><b>Visit Showroom</b><small>See and try it in person</small></span></a>
+        </div>
+
+        <div class="coupons">
+          <p class="coupons-title"><span data-icon="tag" data-size="16"></span> Available offers</p>
+          <div class="coupon-carousel">
+            <button class="nav prev" aria-label="Previous offer">&#8249;</button>
+            <div class="coupon-track"></div>
+            <button class="nav next" aria-label="Next offer">&#8250;</button>
+          </div>
+        </div>
+
+        <ul class="assurance">
+          <li><span data-icon="truck" data-size="18"></span> Free insured delivery across India</li>
+          <li><span data-icon="return" data-size="18"></span> Easy returns within 15 days</li>
+          <li><span data-icon="award" data-size="18"></span> Certificate of authenticity included</li>
+        </ul>
+
+        <div class="store-actions">
+          <a class="store-btn" href="stores.html"><span data-icon="pin" data-size="16"></span> Check Availability in Showroom</a>
+          <a class="store-btn" href="info.html?page=exchange"><span data-icon="exchange" data-size="16"></span> Check Exchange Value</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="not-found" hidden>
+      <h1>Product not found</h1>
+      <p>This design may no longer be available.</p>
+      <a class="btn-primary inline" href="listing.html">Browse all jewellery</a>
+    </section>
+
+    <section class="find-store" hidden>
+      <img class="fs-photo" src="images/showroom/gold-counter.jpg" alt="Jewellery counter at the Mahaveer Jewellers showroom" loading="lazy">
+      <div class="fs-body">
+        <p class="kicker">See It In Person</p>
+        <h2>Experience this piece at our showroom</h2>
+        <p class="muted">Our consultants can keep this design ready for you to try, along with similar pieces in your size and budget.</p>
+        <form class="find-store-form">
+          <label class="pill-input light"><span class="fs-icon"></span><input placeholder="Enter city or pincode" aria-label="City or pincode"></label>
+          <button class="btn-primary">Check</button>
+        </form>
+        <div class="find-store-results"></div>
+        <div class="fs-ctas">
+          <a class="btn-outline wa-enquiry" href="#" target="_blank" rel="noopener">Reserve a Viewing</a>
+          <a class="link-arrow" data-href="map" href="#">Get directions</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" hidden>
+      <div class="section-head"><p class="kicker">Patron Stories</p><h2>Loved by our patrons</h2></div>
+      <div class="review-carousel">
+        <button class="round-nav review-prev" aria-label="Previous review"></button>
+        <div class="review-track"></div>
+        <button class="round-nav review-next" aria-label="Next review"></button>
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="section-head split"><div><p class="kicker">Complete the Look</p><h2>You May Also Like</h2></div></div>
+      <div class="rail related-rail"></div>
+    </section>
+    <section class="related recent-section" hidden>
+      <div class="section-head split"><div><p class="kicker">Your Journey</p><h2>Recently Viewed</h2></div></div>
+      <div class="rail recent-rail"></div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <div class="sticky-bar" hidden>
+    <div class="sticky-info"><small class="sticky-name"></small><b class="sticky-price"></b></div>
+    <span class="pill sticky-variant"></span>
+    <button class="btn-light buy-now">Buy Now</button>
+    <button class="btn-gold add-bag">Add to Bag</button>
+  </div>
+
+  <aside class="drawer details-drawer" aria-hidden="true">
+    <div class="drawer-panel" role="dialog" aria-label="Product details">
+      <div class="drawer-head"><h2>Product Details</h2><button class="icon-btn close-drawer" aria-label="Close">&times;</button></div>
+      <p class="detail-desc"></p>
+      <dl class="detail-list"></dl>
+    </div>
+  </aside>
+
+  <script src="js/icons.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

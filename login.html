@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Mahaveer Jewellers</title>
+  <link rel="icon" href="images/brand/mark-gold.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="login">
+  <div id="site-header"></div>
+  <main class="container page auth">
+    <div class="card auth-card">
+      <h1>Login / Sign Up</h1>
+      <p class="muted">Local demo: no account is created on any server.</p>
+      <div class="tabs login-tabs">
+        <button type="button" class="tab active" data-mode="phone">Mobile</button>
+        <button type="button" class="tab" data-mode="email">Email</button>
+      </div>
+      <form class="login-step-1">
+        <label>Name<input class="name-input" placeholder="Your name"></label>
+        <label>Contact<input class="contact-input" type="tel" placeholder="Enter 10-digit mobile number" required></label>
+        <button class="btn-primary block">Get OTP</button>
+      </form>
+      <form class="login-step-2" hidden>
+        <p>Enter the 6-digit OTP sent to <b class="otp-target"></b></p>
+        <label>OTP<input class="otp-input" inputmode="numeric" maxlength="6" placeholder="______" required></label>
+        <button class="btn-primary block">Verify &amp; Continue</button>
+        <button type="button" class="link change-contact">Change number/email</button>
+      </form>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/icons.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>

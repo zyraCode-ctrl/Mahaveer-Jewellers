@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit Our Showroom | Mahaveer Jewellers</title>
+  <link rel="icon" href="images/brand/mark-gold.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="stores">
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <img src="images/showroom/exterior.jpg" alt="Mahaveer Jewellers showroom exterior">
+    <div class="container-wide page-hero-copy">
+      <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li aria-current="page">Visit Our Showroom</li></ol>
+      <p class="kicker">Visit Our Showroom</p>
+      <h1>A jewellery destination, <em>made personal</em></h1>
+      <p>Step into our showroom to see, touch and try every piece with the guidance of our consultants.</p>
+    </div>
+  </section>
+
+  <main class="container-wide page">
+    <section class="showroom-info">
+      <div class="si-card">
+        <h2>Plan your visit</h2>
+        <dl class="visit-details">
+          <div><dt>Address</dt><dd data-brand="address"></dd></div>
+          <div><dt>Showroom Hours</dt><dd data-brand="hours"></dd></div>
+          <div><dt>Phone</dt><dd data-brand="phone"></dd></div>
+          <div><dt>Email</dt><dd data-brand="email"></dd></div>
+        </dl>
+        <div class="visit-ctas">
+          <a class="btn-primary inline" data-href="map" href="#">Get Directions</a>
+          <a class="btn-outline" data-href="whatsapp" data-message="Hello Mahaveer Jewellers, I would like to book a showroom appointment." href="#">Book an Appointment</a>
+          <a class="btn-outline" data-href="phone" href="#">Call</a>
+        </div>
+      </div>
+      <div class="si-gallery">
+        <img src="images/showroom/reception.jpg" alt="Showroom reception" loading="lazy">
+        <img src="images/showroom/gold-counter.jpg" alt="Gold and bridal counter" loading="lazy">
+        <img src="images/showroom/silver-counter.jpg" alt="Silver and gifting counter" loading="lazy">
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-head">
+        <p class="kicker">In-Store Services</p>
+        <h2>Personal service, at every counter</h2>
+      </div>
+      <div class="service-grid">
+        <div><span data-icon="users"></span><b>Bridal Consultation</b><p>Private seating to plan your complete wedding trousseau with family.</p></div>
+        <div><span data-icon="diamond"></span><b>Diamond Guidance</b><p>Understand cut, colour, clarity and certification before you choose.</p></div>
+        <div><span data-icon="exchange"></span><b>Old Gold Exchange</b><p>Weighed and valued in front of you at today's gold rate.</p></div>
+        <div><span data-icon="ruler"></span><b>Sizing &amp; Alterations</b><p>Ring and bangle sizing, polishing and minor repairs.</p></div>
+        <div><span data-icon="chat"></span><b>Video Appointments</b><p>Preview a curated selection from home on a video call.</p></div>
+        <div><span data-icon="gift"></span><b>Gift Wrapping</b><p>Signature Mahaveer packaging for every milestone.</p></div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-head"><p class="kicker">Our Showroom</p><h2>Find us</h2></div>
+      <div class="store-filters">
+        <select class="city-select" aria-label="City"></select>
+        <input class="store-search" placeholder="Search by area or pincode" aria-label="Search stores">
+      </div>
+      <p class="muted store-count"></p>
+      <div class="store-list"></div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/icons.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>

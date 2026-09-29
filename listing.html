@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jewellery | Mahaveer Jewellers</title>
+  <link rel="icon" href="images/brand/mark-gold.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="plp-page">
+  <div id="site-header"></div>
+
+  <section class="plp-hero">
+    <div class="container-wide">
+      <ol class="breadcrumb"></ol>
+      <h1 class="plp-title">Jewellery</h1>
+      <p class="plp-sub"></p>
+      <span class="count"></span>
+    </div>
+  </section>
+
+  <main class="container-wide plp">
+    <div class="plp-toolbar">
+      <div class="quick-filters" role="group" aria-label="Quick filters"></div>
+    </div>
+    <div class="active-filters"></div>
+
+    <div class="plp-grid"></div>
+    <p class="empty" hidden>No designs match these filters. <a href="#" class="link clear-all-inline">Clear filters</a></p>
+    <div class="load-more-wrap"><button class="outline-btn load-more">Load More</button></div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <div class="sort-filter-pill">
+    <button class="sf-btn open-sort">Sort</button>
+    <button class="sf-btn open-filters">Filters <span class="filter-count"></span></button>
+  </div>
+
+  <aside class="drawer sort-drawer" aria-hidden="true">
+    <div class="drawer-panel sheet" role="dialog" aria-label="Sort">
+      <div class="drawer-head"><h2>Sort By</h2><button class="icon-btn close-drawer" aria-label="Close">&times;</button></div>
+      <div class="sort-options">
+        <label><input type="radio" name="sort" value="featured" checked> Featured</label>
+        <label><input type="radio" name="sort" value="new"> New Arrivals</label>
+        <label><input type="radio" name="sort" value="discount"> Discount</label>
+        <label><input type="radio" name="sort" value="low"> Price: Low to High</label>
+        <label><input type="radio" name="sort" value="high"> Price: High to Low</label>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="drawer filter-drawer" aria-hidden="true">
+    <div class="drawer-panel" role="dialog" aria-label="Filters">
+      <div class="drawer-head"><h2>Filters</h2><button class="icon-btn close-drawer" aria-label="Close">&times;</button></div>
+      <form class="filter-form" onsubmit="return false"></form>
+      <div class="filter-actions">
+        <button type="button" class="outline-btn clear-filters">Clear All</button>
+        <button type="button" class="btn-primary apply-filters">Apply</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="js/icons.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/listing.js"></script>
+</body>
+</html>

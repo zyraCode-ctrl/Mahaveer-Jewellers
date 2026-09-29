@@ -1,0 +1,6 @@
+.env
+.env.*
+server.py
+__pycache__
+.git
+.gitignore
