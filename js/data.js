@@ -11,9 +11,19 @@ window.SiteData = (() => {
     hours: "10:30 AM – 8:30 PM, Monday to Sunday",
     mapURL: "https://maps.app.goo.gl/bT5ye1QQzLwgqFcm7",
     instagram: "https://www.instagram.com/mahaveer__jewellers/",
-    // Reel links (e.g. "https://www.instagram.com/reel/XXXXXXXXX/") shown with Instagram's official
-    // embed when the server feed (INSTAGRAM_ACCESS_TOKEN in .env) is not connected.
-    instagramReels: [],
+    instagramAccounts: [
+      { name: "Mahaveer Jewellers", handle: "mahaveer__jewellers", url: "https://www.instagram.com/mahaveer__jewellers/" },
+      { name: "Mahaveer Silver", handle: "mahaveer_silverhouse", url: "https://www.instagram.com/mahaveer_silverhouse/" },
+    ],
+    // Vertical video cards in the social section. `video` is a file in videos/instagram/ (silent,
+    // looping, played on the page); `link` is the original Reel, or the profile when there is none.
+    // `account` is the index in instagramAccounts.
+    instagramReels: [
+      { video: "videos/instagram/jewellers-1.mp4", link: "https://www.instagram.com/reel/DdilcWKzhSc/", account: 0 },
+      { video: "videos/instagram/silver-1.mp4", link: "https://www.instagram.com/reel/DcfZgGgt4sZ/", account: 1 },
+      { video: "videos/instagram/jewellers-2.mp4", link: "https://www.instagram.com/reel/DddXdR5z48i/", account: 0 },
+      { video: "videos/instagram/silver-2.mp4", link: "https://www.instagram.com/reel/DdoGckNN6ar/", account: 1 },
+    ],
     facebook: "#",
   };
 

@@ -177,10 +177,10 @@ window.Site = (() => {
     return [...main.slice(0, 6), { label: NAV_LABELS.more, href: listingURL({ cat: "more" }), groups: categoryMenu(more) }, bridal, collections, gifting, showroom, story];
   }
 
-  const logoHTML = (variant = "light") => `
-    <a href="index.html" class="logo logo-${variant}" aria-label="${B.name} home">
-      <img class="logo-mark" src="images/brand/mark-gold.png" alt="" width="48" height="48">
-      <img class="logo-word" src="images/brand/${variant === "light" ? "wordmark-champagne" : "wordmark-gold"}.png" alt="${B.name}" width="160" height="48">
+  const LOGO_SIZES = { horizontal: [720, 173], text: [720, 219], full: [720, 577] };
+  const logoHTML = (kind = "horizontal") => `
+    <a href="index.html" class="logo logo-${kind}" aria-label="${B.name} home">
+      <img src="images/brand/logo-${kind}.png" alt="${B.name}" width="${LOGO_SIZES[kind][0]}" height="${LOGO_SIZES[kind][1]}">
     </a>`;
 
   function renderHeader() {
@@ -215,7 +215,7 @@ window.Site = (() => {
               <ul class="search-suggest" hidden></ul>
             </form>
           </div>
-          ${logoHTML("dark")}
+          ${logoHTML()}
           <div class="header-actions">
             <a href="search.html" class="icon-btn mobile-search" aria-label="Search">${icon("search", 22)}</a>
             <a href="gold-rate.html" class="gold-rate"><span class="coin-flip"><span class="coin">&#8377;</span><span class="coin coin-back" aria-hidden="true">&#8377;</span></span> Gold Rate</a>
@@ -245,7 +245,7 @@ window.Site = (() => {
       </header>
       <aside class="drawer mobile-menu" aria-hidden="true">
         <div class="drawer-panel left" role="dialog" aria-label="Menu">
-          <div class="drawer-head">${logoHTML("dark")}<button class="icon-btn close-drawer" aria-label="Close">${icon("close", 22)}</button></div>
+          <div class="drawer-head">${logoHTML()}<button class="icon-btn close-drawer" aria-label="Close">${icon("close", 22)}</button></div>
           <a class="mobile-login" href="${user ? "account.html" : "login.html"}">${icon("user", 20)} ${user ? `Hi, ${escapeHTML(user.name)}` : "Login / Sign Up"}</a>
           <a class="mobile-gold" href="gold-rate.html"><span class="coin">&#8377;</span> Today's Gold Rate</a>
           ${items.filter((item) => item.groups.length).map((item) => `
@@ -329,77 +329,70 @@ window.Site = (() => {
     if (!mount) return;
     const col = (title, links, cls = "") => `<div class="footer-col ${cls}"><h3>${title}</h3><ul>${linkList(links)}</ul></div>`;
     const jewellery = [
-      ["Rings", listingURL({ cat: "rings" })], ["Necklaces", listingURL({ cat: "necklaces-pendants", type: "Necklace" })],
-      ["Earrings", listingURL({ cat: "earrings" })], ["Bracelets", listingURL({ cat: "bracelets-bangles", type: "Bracelet" })],
-      ["Bangles", listingURL({ cat: "bracelets-bangles", type: "Bangle" })], ["Mangalsutra", listingURL({ cat: "mangalsutra" })],
-      ["Pendants", listingURL({ cat: "necklaces-pendants", type: "Pendant" })], ["Nose Pins", listingURL({ cat: "more", type: "Nose Pin" })],
-      ["Coins", listingURL({ cat: "more", type: "Silver Coin" })], ["Diamond", listingURL({ metal: "Diamond" })],
-      ["Gold", listingURL({ metal: "Plain Gold" })], ["Silver", listingURL({ cat: "silver" })],
+      ["Rings", listingURL({ cat: "rings" })], ["Earrings", listingURL({ cat: "earrings" })],
+      ["Bracelets", listingURL({ cat: "bracelets-bangles", type: "Bracelet" })], ["Necklaces", listingURL({ cat: "necklaces-pendants", type: "Necklace" })],
     ];
     const channel = (name, label, href, external) => `<a class="channel" href="${href}" ${external ? 'target="_blank" rel="noopener"' : ""}><span>${icon(name, 18)}</span><small>${label}</small></a>`;
-    const popular = [
-      ["Gold Earrings", listingURL({ cat: "earrings", metal: "Plain Gold" })], ["Diamond Rings", listingURL({ cat: "rings", metal: "Diamond" })],
-      ["Mangalsutra Designs", listingURL({ cat: "mangalsutra" })], ["Gold Bangles", listingURL({ cat: "bracelets-bangles", type: "Bangle" })],
-      ["Diamond Necklaces", listingURL({ cat: "necklaces-pendants", metal: "Diamond" })], ["Bridal Jewellery", listingURL({ collection: "vivaah" })],
-      ["Everyday Diamonds", listingURL({ collection: "everyday-diamonds" })], ["Silver Coins", listingURL({ cat: "more", type: "Silver Coin" })],
-      ["Jewellery Gifts", listingURL({ gifting: "all" })], ["Silver Jewellery", listingURL({ cat: "silver" })],
-    ];
     mount.outerHTML = `
-      <section class="newsletter" aria-label="Newsletter">
-        <div class="container-wide newsletter-inner">
-          <div>
-            <p class="kicker">The Mahaveer Letter</p>
-            <h2>New arrivals, bridal edits and showroom events</h2>
-          </div>
-          <form class="newsletter-form">
-            <input type="email" name="email" required placeholder="Your email address" aria-label="Email address">
-            <button class="btn-primary" type="submit">Subscribe</button>
-            <p class="small-note muted">Occasional letters only. Unsubscribe at any time.</p>
-          </form>
-        </div>
-      </section>
       <footer class="footer">
-        <div class="container-wide footer-main">
-          <div class="footer-brand">
-            <div class="footer-logo">${logoHTML("light")}</div>
-            <p class="footer-tagline">${escapeHTML(B.tagline)}. Crafted with care, chosen in person, trusted for generations.</p>
-            <address>
-              <a href="${mapURL()}" target="_blank" rel="noopener">${icon("pin", 16)} ${escapeHTML(B.address)}</a>
-              <span>${icon("store", 16)} ${escapeHTML(B.hours)}</span>
-            </address>
-            <div class="channels">
-              ${channel("whatsapp", "WhatsApp", whatsappURL(`Hello ${B.name}`), true)}
-              ${channel("phone", "Call", B.phoneHref)}
-              ${channel("mail", "Email", `mailto:${B.email}`)}
-              ${channel("chat", "Enquire", "contact.html")}
+        <div class="footer-top">
+          <div class="container-wide footer-main">
+            <div class="footer-brand">
+              <div class="footer-logo">${logoHTML("full")}</div>
+              <p class="footer-tagline">With care, chosen in person, trusted for generations.</p>
+              <address>
+                <a href="${mapURL()}" target="_blank" rel="noopener">${icon("pin", 16)} ${escapeHTML(B.address)}</a>
+                <span>${icon("clock", 16)} ${escapeHTML(B.hours)}</span>
+              </address>
+              <div class="channels">
+                ${channel("whatsapp", "WhatsApp", whatsappURL(`Hello ${B.name}`), true)}
+                ${channel("phone", "Call", B.phoneHref)}
+                ${channel("mail", "Email", `mailto:${B.email}`)}
+                ${channel("chat", "Enquire", "contact.html")}
+              </div>
+            </div>
+            <div class="footer-right">
+            <div class="footer-grid">
+              ${col("Jewellery", jewellery)}
+              ${col("Collections", [...D.COLLECTIONS.map((c) => [c.name, listingURL({ collection: c.slug })]), ["All Collections", "collections.html"]])}
+              ${col("Our Company", [["About Us", "about.html"], ["Store Locator", "stores.html"], ["Contact Us", "contact.html"], ["FAQ's", "info.html?page=faqs"], ["Our Blogs", "info.html?page=blog"]])}
+              ${col("Our Policies", [["Privacy Policy", "info.html?page=privacy"], ["Return Policy", "info.html?page=returns"], ["Terms & Conditions", "info.html?page=terms"], ["Shipping Policy", "info.html?page=delivery"]])}
+            </div>
+            <div class="footer-assure">
+              <div class="footer-promo">
+                <p class="footer-since">Estd. 2008</p>
+                <p class="footer-promo-title">More than Jewellery, <em>It&rsquo;s a Relationship</em></p>
+              </div>
+              <div class="footer-cert">
+                <p class="footer-cert-label">Certified &amp; Hallmarked By</p>
+                <ul class="footer-cert-list">
+                  <li><img src="images/certs/bis.png" alt="BIS Hallmark with HUID" width="177" height="120" loading="lazy"></li>
+                  <li><img src="images/certs/igi.png" alt="IGI certified diamonds" width="280" height="120" loading="lazy"></li>
+                  <li class="is-silver"><img src="images/certs/sgl.png" alt="SGL certified diamonds" width="259" height="120" loading="lazy"></li>
+                </ul>
+              </div>
+            </div>
             </div>
           </div>
-          <div class="footer-grid">
-            ${col("Jewellery", jewellery, "two-col")}
-            ${col("Collections", [...D.COLLECTIONS.map((c) => [c.name, listingURL({ collection: c.slug })]), ["All Collections", "collections.html"]])}
-            ${col("Shop", [["New Arrivals", listingURL({ tag: "new" })], ["Best Sellers", listingURL({ tag: "best" })], ["Most Gifted", listingURL({ tag: "gifted" })], ["Gifting Range", listingURL({ gifting: "all" })], ["Gift Cards", "info.html?page=gift-cards"], ["Offers", "offers.html"], ["Gold Rate Today", "gold-rate.html"]])}
-            ${col("Customer Care", [["Our Story", "our-story.html"], ["Visit Our Showroom", "stores.html"], ["Contact Us", "contact.html"], ["Track your Order", "info.html?page=track"], ["Delivery Information", "info.html?page=delivery"], ["Returns", "info.html?page=returns"], ["Lifetime Exchange", "info.html?page=exchange"], ["Jewellery Guide", "info.html?page=size-guide"], ["Help & FAQs", "info.html?page=faqs"]])}
-          </div>
         </div>
-        <div class="container-wide footer-popular">
-          <h3>Popular Searches</h3>
-          <p>${popular.map(([label, href]) => `<a href="${href}">${label}</a>`).join("")}</p>
-        </div>
-        <div class="container-wide footer-bottom">
-          <p class="copyright">&copy; 2026 ${B.name}. All Rights Reserved.</p>
-          <ul class="footer-legal">${linkList([["About Us", "about.html"], ["Blog", "info.html?page=blog"], ["Offers T&Cs", "info.html?page=offer-terms"], ["Privacy Policy", "info.html?page=privacy"], ["Cookie Policy", "info.html?page=cookies"], ["Terms & Conditions", "info.html?page=terms"]])}</ul>
-          <div class="socials">
-            <a href="${B.instagram}" aria-label="Instagram">${icon("instagram", 18)}</a>
-            <a href="${B.facebook}" aria-label="Facebook">${icon("facebook", 18)}</a>
-            <a href="${whatsappURL(`Hello ${B.name}`)}" target="_blank" rel="noopener" aria-label="WhatsApp">${icon("whatsapp", 18)}</a>
+        <div class="footer-base">
+          <div class="container-wide footer-bottom">
+            <p class="copyright">&copy; 2026 ${B.name}.</p>
+            <div class="footer-bottom-center">
+              <p class="footer-gu-tagline" lang="gu">વિશ્વાસ ઘડ્યો છે અમે ઘરેણાંમાં</p>
+              <span class="footer-rule" aria-hidden="true"></span>
+            </div>
+            <div class="footer-follow">
+              <span>Follow Us</span>
+              <div class="socials">
+                <a href="${B.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icon("instagram", 19)}</a>
+                <a href="${B.facebook}" aria-label="Facebook">${icon("facebook", 19)}</a>
+                <a href="${whatsappURL(`Hello ${B.name}`)}" target="_blank" rel="noopener" aria-label="WhatsApp">${icon("whatsapp", 19)}</a>
+              </div>
+            </div>
           </div>
         </div>
       </footer>`;
-    $(".newsletter-form").addEventListener("submit", (event) => {
-      event.preventDefault();
-      event.target.reset();
-      toast("Thank you for subscribing");
-    });
   }
 
   function renderOverlays() {
@@ -424,7 +417,7 @@ window.Site = (() => {
       <div class="modal reward-modal" hidden role="dialog" aria-label="Reward offer">
         <div class="modal-card reward-card">
           <button class="modal-close" aria-label="Close">${icon("close", 18)}</button>
-          <img class="reward-mark" src="images/brand/mark-gold.png" alt="">
+          <img class="reward-mark" src="images/brand/logo-white.png" alt="${B.name}" width="720" height="577">
           <p class="reward-kicker">A WELCOME FROM MAHAVEER</p>
           <h2>₹500 off your first piece</h2>
           <p>Register to receive your welcome privilege, early access to new collections and showroom invitations.</p>
@@ -442,7 +435,7 @@ window.Site = (() => {
           <button class="modal-close" aria-label="Close">${icon("close", 18)}</button>
           <div class="signin-art"><img src="images/showroom/reception.jpg" alt="Inside the Mahaveer Jewellers showroom"></div>
           <div class="signin-body">
-            <img class="signin-mark" src="images/brand/mark-gold.png" alt="">
+            <img class="signin-mark" src="images/brand/logo-full.png" alt="${B.name}" width="720" height="577">
             <form class="signin-form">
               <h2>Welcome to Mahaveer</h2>
               <p class="muted">Sign in to save your wishlist, track orders and book showroom appointments.</p>
@@ -506,6 +499,22 @@ window.Site = (() => {
       sessionStorage.setItem("site.signin-shown", "1");
       setTimeout(() => setModal(signin, true), 8000);
     }
+    bindFabStop();
+  }
+
+  function bindFabStop() {
+    const base = $(".footer-base");
+    if (!base) return;
+    let queued = false;
+    const update = () => {
+      queued = false;
+      const lift = Math.max(0, window.innerHeight - base.getBoundingClientRect().top);
+      document.documentElement.style.setProperty("--fab-lift", `${Math.round(lift)}px`);
+    };
+    const queue = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
+    window.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("resize", queue);
+    update();
   }
 
   const badgeFor = (p) => {
